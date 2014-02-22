@@ -40,8 +40,13 @@ var incorrectAnswer = function(){
   $(document).html("Game Over!");
 };
 
-var checkAnswer = function (answer){
-  console.log(answer);
+var checkAnswer = function (answer, rightAnswer){
+  if (answer == rightAnswer){
+    correctAnswer();
+  }
+  else{
+    incorrectAnswer();
+  }
 };
 
 var main = function(){
@@ -57,15 +62,16 @@ var main = function(){
   var otherWords = getWords(rand);
   var words = placeCorrectWord(correctWord, otherWords);
   outputWords(words);
+  return correctWord;
 }
 
 
 
 //Main Code
 $(document).ready(function(){
-  main();
+  var correctWord = main();
   $('#words').on("click", "li", function(){
-     checkAnswer(this.innerHTML);
+     checkAnswer($(this).text(), correctWord);
   });
 
 });
