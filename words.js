@@ -1,4 +1,4 @@
-[
+var wordsData = [
     {
         "id": 75296352,
         "term": "laconic",
@@ -239,4 +239,4 @@
         "definition": "correct; set right; remedy",
         "image": null
     }
-]
+];
