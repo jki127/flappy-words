@@ -1,4 +1,4 @@
 Flappy Words
 =============
 
-1st Place Project from [Code4Tommorow](http://gentechstudenthackathon.challengepost.com/) Hackathon
+Modified Mark Steve's [Heavy Bird](https://github.com/marksteve/dtmb) into an SAT Word learning game.
