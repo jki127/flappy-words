@@ -1,3 +1,22 @@
+var wordCounter = -1;
+var correctWord = "";
+var correctDef = "";
+
+var nextWord = function(){
+    wordCounter++;
+    wordCounter = wordCounter % wordsData.length;
+    return wordsData[wordCounter].term;
+};
+
+var pickCorrectWord = function(){
+  var wordsLength = wordsData.length;
+  var rand = (Math.floor(Math.random()*(wordsLength - 5))) + 5;
+  //Add and minus 5 in order to prevent OutOfBounds
+  var correctWordObj = wordsData[rand];
+  correctWord = correctWordObj.term;
+  correctDef = correctWordObj.definition;
+};
+
 var wordsData = [
     {
         "id": 75296352,
@@ -58,7 +77,7 @@ var wordsData = [
         "term": "mundane",
         "definition": "ordinary; unimaginative; common",
         "image": null
-    },
+    }/*,
     {
         "id": 75296362,
         "term": "nonchalance",
@@ -238,5 +257,5 @@ var wordsData = [
         "term": "rectify",
         "definition": "correct; set right; remedy",
         "image": null
-    }
+    }*/
 ];

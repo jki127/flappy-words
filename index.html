@@ -1,19 +1,29 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-  <head>
-  </head>
-	<body>
-		<h1>Flappy Words</h1>
-		<div class="definition"></div>
-		<div class="words-container">
-			<ul id="words">
-      <!--WORDS GO HERE-->
-			</ul>
-		</div>
-	
-  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="words.js"></script>
-  <script src="main.js"></script>
-
-  </body>
+    <head>
+        <title>FlappyWords</title>
+        <meta name="description" content="The most annoying way to learn SAT Words">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <style>
+            body {
+                background: #333;
+                margin: 0;
+                padding: 0;
+            }
+            #screen {
+                margin: 0 auto;
+                max-height: 568px;
+                max-width: 320px;
+            }
+            </style>
+        </style>
+    </head>
+    <body>
+        <div id="screen"></div>
+        <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+        <script src="words.js"></script>
+        <script src="phaser.min.js"></script>
+        <script src="main.js"></script>
+        <script src="http://cdn.kik.com/kik/1.0.0/kik.js"></script>
+    </body>
 </html>
