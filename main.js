@@ -24,11 +24,11 @@ Clay.ready = function( fn ) {
         wf.async = 'true';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
-    })(); 
+    })();
 };
 ( function() {
     var clay = document.createElement("script"); clay.async = true;
-    clay.src = "http://cdn.clay.io/api.js"; 
+    clay.src = "https://cdn.clay.io/api.js";
     var tag = document.getElementsByTagName("script")[0]; tag.parentNode.insertBefore(clay, tag);
 } )();
 
@@ -81,7 +81,7 @@ function postScore() {
         return;
     postScoreText.setText('...');
     postingScore = true;
-    
+
     var post = function() {
     	if(!leaderboard) return;
         leaderboard.post({ score: score }, function() {
@@ -90,13 +90,13 @@ function postScore() {
             postingScore = false;
         });
     }
-    
+
     if (Clay.Environment.platform == 'kik') {
        Clay.Kik.connect({}, function(response) {
            if (response.success) {
                Clay.Player.onUserReady( post );
            } else {
-               postScoreText.setText('POST\nSCORE!');            
+               postScoreText.setText('POST\nSCORE!');
                postingScore = false;
            }
        });
@@ -236,7 +236,7 @@ function create() {
         }
         );
     highScoreText.anchor.setTo(0.5, 0.5);
-    
+
     // Add kik this text (hidden until game is over)
     postScoreText = game.add.text(
         game.world.width / (Clay.Environment.platform == 'kik' ?  4 : 2),
@@ -255,7 +255,7 @@ function create() {
     postScoreText.renderable = false;
     // So we can have clickable text... we check if the mousedown/touch event is within this rectangle inside flap()
     postScoreClickArea = new Phaser.Rectangle(postScoreText.x - postScoreText.width / 2, postScoreText.y - postScoreText.height / 2, postScoreText.width, postScoreText.height);
-    
+
     // Add kik this text (hidden until game is over)
     kikThisText = game.add.text(
         3 * game.world.width / 4,
@@ -274,7 +274,7 @@ function create() {
     kikThisText.renderable = false;
     // So we can have clickable text... we check if the mousedown/touch event is within this rectangle inside flap()
     kikThisClickArea = new Phaser.Rectangle(kikThisText.x - kikThisText.width / 2, kikThisText.y - kikThisText.height / 2, kikThisText.width, kikThisText.height);
-    
+
     // Add sounds
     flapSnd = game.add.audio('flap');
     scoreSnd = game.add.audio('score');
@@ -447,12 +447,12 @@ function setGameOver(daBird, daTower) {
     window.localStorage.setItem('hiscore', hiscore);
     highScoreText.setText("HIGHSCORE\n" + hiscore);
     highScoreText.renderable = true;
-    
+
     postScoreText.renderable = true;
     if (Clay.Environment.platform == 'kik') {
         kikThisText.renderable = true;
     }
-    
+
     // Stop all towers
     towers.forEachAlive(function(tower) {
         tower.body.velocity.x = 0;
