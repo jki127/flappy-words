@@ -28,7 +28,7 @@ Clay.ready = function( fn ) {
 };
 ( function() {
     var clay = document.createElement("script"); clay.async = true;
-    clay.src = "https://cdn.clay.io/api.js";
+    clay.src = "clay-api.js";
     var tag = document.getElementsByTagName("script")[0]; tag.parentNode.insertBefore(clay, tag);
 } )();
 
